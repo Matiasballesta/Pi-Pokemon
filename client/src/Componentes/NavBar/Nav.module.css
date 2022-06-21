@@ -1,0 +1,90 @@
+
+.container{
+    background-color: #eb630f;
+    height: 99px;
+    position: relative;
+    
+}
+
+.img{
+    height: 100%;
+    
+} 
+
+.divImg{
+    display: flex;
+    height: 107%;
+    margin-left: 12px;
+    float: left;
+}
+
+.create{
+    border: none;
+    background-color: #ffcc06;
+    height: 44px;
+    width: 171px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 900;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.create:hover{
+    background-color: white;
+}
+
+.divCreate{
+    float: left;
+    margin: 19px;
+    margin-left: 52px;
+}
+
+
+
+.divSelectors{
+    float: left;
+    margin: 1%;
+    margin-left: 15.5%;
+}
+
+
+
+option{
+    font-family:'Open Sans', sans-serif ;
+    font-size: 15px;
+    background-color: white;
+}
+
+select{
+    height: 44px;
+    font-family:'Open Sans', sans-serif ;
+    font-size: 15px;
+    border:white;
+    background: #ffcc06;
+    align-items: center;
+    text-align: unset;
+}
+
+select:hover{
+    background-color: white;
+}
+
+.selectOne{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.selectTree{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.searchBar{
+    float: left;
+    margin: 1%;
+    margin-left: 38%;
+}
+
+

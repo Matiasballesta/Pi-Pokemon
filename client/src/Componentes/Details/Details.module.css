@@ -1,0 +1,8 @@
+.container{
+    background-color: #5AA1D7;
+    background-image: url('./images.jpeg');
+    background-size: cover;
+    height: 150%;
+    width: 100%;
+    
+}

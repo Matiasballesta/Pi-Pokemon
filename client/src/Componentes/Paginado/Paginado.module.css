@@ -1,0 +1,31 @@
+.container{
+    position: relative;
+}
+
+.page{
+    list-style: none;
+    display: inline-table;
+    
+}
+
+.button{
+    color: white;
+    padding: 10px;
+    background-color: #68AE28;
+    border: none;
+    
+}
+
+.button:hover{
+    background-color: white;
+    color: #68AE28;
+}
+
+@media screen and (max-width: 766px) {
+    .container{
+        margin-top: 16%;
+    }
+
+    
+
+}

@@ -1,0 +1,25 @@
+.landing{
+    background-color: #FFCC01;
+    background-image: url('./landing.png');
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    background-size: cover;
+}
+
+
+.btn{
+    margin: 1%;
+    background-color: white;
+}
+
+.btn:hover{
+    background-color: #FFCC01;
+    border: black solid 1px;
+}
+
+.name{
+    margin: 1%;
+    background-color: #FFCC01;
+    
+}
