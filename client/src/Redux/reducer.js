@@ -2,8 +2,7 @@ const initialState = {
     pokemons: [],
     allpokemons: [],
     types: [],
-    pokemon: {}
-    
+    pokemon: {}  
 }
 
 

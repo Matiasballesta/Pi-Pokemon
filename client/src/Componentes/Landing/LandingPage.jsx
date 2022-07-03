@@ -8,8 +8,9 @@ export default function LandingPage(){
         <div className={style.landing}>
             <h1 className={style.name}>Welcome to Pokemon Videogame</h1>
             <Link to='/home'>
-                <button className={style.btn}>Home</button>
+                <button className={style.button}>Home</button>
             </Link>
+            <div className={style.myname}>By Matias Ballestá</div>
         </div>
     )
 }

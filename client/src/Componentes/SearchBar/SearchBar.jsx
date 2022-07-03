@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {getPokeByName} from '../../Redux/action'
-import  './Searchbar.module.css';
+import style from './Searchbar.module.css'
+
+
 
 
 const SearchBar = () => {
-
 const dispatch = useDispatch();
 const [pokemon, setPokemon] = useState('');
-const pokemons = useSelector((state) => state.pokemons)
-
 
 let changeInput = (e) => {
     setPokemon(e.target.value);
@@ -17,34 +16,23 @@ let changeInput = (e) => {
 }
 
 let handleSubmit = (e) => {
-    e.preventDefault(e);
-    const findPoke = pokemons.find(e => e.name.toLowerCase() === pokemon.toLowerCase());
-    if(findPoke){
-        dispatch(getPokeByName(pokemon))
-        setPokemon('')
-    }else{
-        setPokemon('')
-        window.location.href = 'http://localhost:3000/Notfound'
-        //Propiedad que te retorna el url de una pagina actual
-    }
+   e.preventDefault(e);
+   dispatch(getPokeByName(pokemon));
+   setPokemon('')
 }
 
-// let handleSubmit = (e) => {
-//    e.preventDefault(e);
-//    dispatch(getPokeByName(pokemon));
-//    setPokemon('')
-// }
 
     return(
-        <div>
+        <div className={style.container}>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input
                 type="text"
                 placeholder='Pokemon..'
                 onChange={(e) => changeInput(e)}
                 value={pokemon}
+                className={style.input}
                 />
-                <button type="submit">Buscar</button>
+                <button className={style.button} type="submit">Search..</button>
             </form>
         </div>
     )

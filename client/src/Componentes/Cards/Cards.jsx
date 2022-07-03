@@ -1,36 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import Card from '../Card/Card'
 import style from './Cards.module.css'
 
-
-const Cards = ({id, name, image, types})=> {
-  
+export default function Cards({currentPokes}){
+    
 return(
     <div className={style.container}>
-        <Link to={`/home/${id}`} className={style.link}>
-        <div className={style.aux}>
-        <h1 className={style.name}>{name}</h1>
-        
-
-        <div className={style.image}>
-        <img src={image} alt="img not found" width="200px" height="250px" className={style.img}/>
-        </div>
-
         {
-                    types?.map(i => {
-                        return (
-                            
-                                i.name ? <h2 className={style.types} key={i.name}>{i.name}</h2> : <h2 className={style.types} key={i}>{i}</h2>
-                            
-                        )
-                    }
-                    )
-                }
-                </div>
-        </Link>
+            currentPokes.length && currentPokes.map((el)=> {
+                return (
+                    <Card name={el.name} image={el.image} types={el.types} key={el.id} id={el.id}/>
+                )
+            })
+        }
+
     </div>
-   )
+) 
 }
-
-
-export default Cards;

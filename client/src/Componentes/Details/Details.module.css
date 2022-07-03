@@ -1,8 +1,78 @@
 .container{
-    background-color: #5AA1D7;
     background-image: url('./images.jpeg');
     background-size: cover;
-    height: 150%;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:solid;
+    font-size: 20px;
+    height: 120%;
     width: 100%;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     
+}
+
+.button{
+    border:none;
+    border: none;
+    background-color: #FFCC01;
+    height: 49px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    pointer-events: all;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+} 
+
+.name{
+    text-transform: capitalize;
+    font-size: 30px;
+    margin-right: -90px;
+    margin-top: -220px;
+
+}
+
+.firstDiv{
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.secondDiv{
+   position: fixed;
+   left: 80px;
+   bottom: 120px;
+   margin-left: 70px
+   
+
+}
+
+.asd{
+    text-transform: capitalize;
+}
+
+.detail{
+    text-align: center;
+    width: 320px;
+    height: 600px;
+    border-radius: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+    display: inline-block;
+    margin-left: -40px;
+    margin-top: -200px;
+}
+
+.detail:hover  {
+    -webkit-transform:scale(1.05);transform:scale(1.05);
 }

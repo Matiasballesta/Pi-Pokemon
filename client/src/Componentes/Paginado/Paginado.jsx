@@ -4,8 +4,8 @@ import style from './Paginado.module.css'
 export default function Paginado({pokesperPage, allPokemons, paginado}){
     const pageNumbers = []
 
-    for(let i = 0; i <= Math.ceil(allPokemons/pokesperPage)-1; i++){
-        pageNumbers.push(i+1)
+    for(let i = 1; i <= Math.ceil(allPokemons/pokesperPage); i++){
+        pageNumbers.push(i)
     }
     return(
         <nav className={style.container}>
@@ -22,15 +22,3 @@ export default function Paginado({pokesperPage, allPokemons, paginado}){
 }
 
 
-
-
-//Si se quiere declarar un estado o bindear algo usamos el constructor si no no hace falta
-// export default class Paginado extends React.Component{
-//     constructor(props);
-//     super(props);
-//     render(){
-//         <div>
-
-//         </div>
-//     }
-// }

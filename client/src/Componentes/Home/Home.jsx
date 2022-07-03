@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { getPokemons, getTypes, filterDb, filterByType, OrderBy } from '../../Redux/action';
-import Card from '../Card/Card'
+import Cards from '../Cards/Cards'
 import Paginado from '../Paginado/Paginado';
 import Nav from '../NavBar/Nav'
 import Loading from '../Loading/Loading'
-
+import Notfound from '../Notfound/Notfound'
 import style from './Home.module.css'
 
 
@@ -15,19 +15,20 @@ export default function Home(){
     const allPokemons = useSelector((state) => state.pokemons)
     const types = useSelector((state) => state.types)
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokesperPage, setpokesPerPage] = useState(12)
+    const pokesperPage = 12
     const indexLastPoke = currentPage * pokesperPage // 1 * 12 = 12
     const indexfirstPoke = indexLastPoke - pokesperPage // 12 - 12 = 0
     const currentPokes = allPokemons.slice(indexfirstPoke, indexLastPoke)
-    const [order, setOrder] = useState('')
+    const [,setOrder] = useState('')
+    const [loading, setLoading] = useState(true)
 
 const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
 }
 
     useEffect(() => {
-        dispatch(getPokemons())
         dispatch(getTypes())
+        dispatch(getPokemons()).then(() => setLoading(false))
     },[dispatch])
 
 function handleFilterCreated(e){
@@ -50,7 +51,7 @@ function handleFilterSort(e){
 }
 
 
-if(allPokemons.length < 1){
+if(loading){
     return (
         <Loading/>
         )
@@ -68,7 +69,10 @@ if(allPokemons.length < 1){
             allPokemons={allPokemons.length} 
             paginado={paginado}
             />
-            <Card currentPokes={currentPokes}/>
+            {
+                allPokemons.length ?
+                <Cards currentPokes={currentPokes}/> : <Notfound/>
+            }
         </div>
     )
  }

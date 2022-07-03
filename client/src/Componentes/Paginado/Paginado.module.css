@@ -10,22 +10,15 @@
 
 .button{
     color: white;
-    padding: 10px;
-    background-color: #68AE28;
+    padding: 15px;
+    background-color: #68ae10;
     border: none;
-    
+    margin: 2px;
+    border-radius: 6px;
+
 }
 
 .button:hover{
     background-color: white;
     color: #68AE28;
-}
-
-@media screen and (max-width: 766px) {
-    .container{
-        margin-top: 16%;
-    }
-
-    
-
 }

@@ -1,20 +1,31 @@
 import React from 'react';
-import Cards from '../Cards/Cards'
+import {Link} from 'react-router-dom'
 import style from './Card.module.css'
 
-export default function Card({currentPokes}){
-    
+
+const Card = ({id, name, image, types})=> {
+  
 return(
     <div className={style.container}>
+        <Link to={`/home/${id}`} className={style.link}>
+        <div className={style.aux}>
+        <h1 className={style.name}>{name}</h1>
+        <div className={style.image}>
+        <img src={image} alt="img not found" className={style.img}/>
+        </div>
         {
-            currentPokes.length ? (currentPokes.map((el)=> {
-                return (
-                    <Cards name={el.name} image={el.image} types={el.types} key={el.id} id={el.id}/>
-                )
-            })
-            ) : window.location.href='http://localhost:3000/Notfound'
+                    types?.map(i => {
+                        return (  
+                           i.name ? <h2 className={style.types} key={i.name}>{i.name}</h2> : <h2 className={style.types} key={i}>{i}</h2>
+                        )
+                    }
+                    )
         }
-
+                </div>
+        </Link>
     </div>
-) 
+   )
 }
+
+
+export default Card;

@@ -18,36 +18,36 @@ function handleClick(e){
         <div className={style.container}>
             <div className={style.divImg}>
             <Link to='/home'>
-                <button onClick={(e) => handleClick(e)}>HOME</button>
+                <button className={style.button} onClick={(e) => handleClick(e)}>HOME</button>
             </Link>
-            </div>
             <div>
             <Link to='/create'>
                 <button className={style.create}>CREATE POKEMON</button>
             </Link>
             </div>
+            </div>
 
             <div className={style.divSelectors}>
                <select onChange={(e) => handleFilterSort(e)} className={style.selectOne}>
+                    <option value=''>Order By</option>
                     <option value='asc'>A-Z</option>
                     <option value='desc'>Z-A</option>
                     <option value='attack+'>Attack +</option>
                     <option value='attack-'>Attack -</option>
                 </select>
-                    <select onChange={(e) => handleFilterCreated(e)}>
-                    <option value='all'>All</option>
+                    <select className={style.selectTwo} onChange={(e) => handleFilterCreated(e)}>
+                    <option value='all'>All Pokemons</option>
                     <option value='created'>Created by Us</option>
                     <option value='api'>Existing</option>
                 </select>
-                <select onChange={(e) => handleFilterTypes(e)} className={style.selectTree}>
+                <select onChange={(e) => handleFilterTypes(e)} className={style.selectThree}>
                     <option value='types'>Types</option>
                     {
                         types?.map(el => {
                             return(
-                                <option value={el.name} key={el.name}>{el.name}</option>
+                                <option className={style.options} value={el.name} key={el.name}>{el.name.toUpperCase()}</option>
                             )
                         })
-                        
                     }
                 </select>
             </div>

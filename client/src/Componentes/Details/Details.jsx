@@ -29,14 +29,17 @@ if(!pokemon.name){
     return (
         <div className={style.container}>
             <Link to='/home'>
-                    <button onClick={() => handlerClean()}>Volver</button>
+                    <button className={style.button} onClick={() => handlerClean()}>Back</button>
             </Link>
-            <div>
-            <h1>Name: {pokemon.name}</h1>
+            <div className={style.firstDiv}>
+            <div className={style.name}>
+            <h1>{pokemon.name}</h1>
             </div>
-            <div>
-            <img src={pokemon.image} alt="img not found" width="200px" height="250px"/>
+            <div className={style.secondDiv}>
+            <img src={pokemon.image} alt="img not found"/>
             </div>
+            </div>
+           <div className={style.detail}>
             <div>
             <h2>HP: {pokemon.hp}</h2> 
             </div>
@@ -56,15 +59,18 @@ if(!pokemon.name){
             <h2>Height: {pokemon.height}</h2>  
             </div>
             <div>
+                <h2>Types: </h2>
                 {
                     pokemon.types?.map(el => {
                         return (
-                            el.name ? <h2 key={el.name}>{el.name}</h2> : <h2 key={el}>{el}</h2>
+                            el.name ? <h2 key={el.name}>{el.name.toUpperCase()}</h2> : <h2 className={style.asd} key={el}>{el}</h2>
+                            )
+                        }
                         )
                     }
-                    )
-                }
             </div>
+                    </div>
+
         </div>
     )
   }

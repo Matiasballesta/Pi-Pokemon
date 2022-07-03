@@ -2,7 +2,6 @@
     background-color: #5AA1D7;
     background-image: url('./background\ \(1\).jpg');
     background-size: cover;
-    height: 100%;
-    width: 100%;
-    
+    position: inherit;
+    height: 1300px;
 }

@@ -32,13 +32,20 @@ export function getPokeById(id){
 
 export function getPokeByName(name){
     return async (dispatch) => {
-        const json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
-        return dispatch({
-            type: "GET_POKE_NAME",
-            payload: json.data
-        })
+    try{
+            const json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            console.log(json.data)
+            return dispatch({
+                type: "GET_POKE_NAME",
+                payload: json.data
+            })
+        }catch(e){
+            dispatch({type: "GET_POKE_NAME", payload: []})
+            console.log(e)
+        }
     }
 }
+
 
 export function createPokemons(payload){
     return async (dispatch) => {

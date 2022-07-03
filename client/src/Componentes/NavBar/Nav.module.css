@@ -1,21 +1,18 @@
 
 .container{
-    background-color: #eb630f;
-    height: 99px;
-    position: relative;
-    
+    background-color: #ee6901;
+    display: flex;
+    justify-content: space-evenly; 
 }
 
 .img{
     height: 100%;
-    
 } 
 
 .divImg{
     display: flex;
-    height: 107%;
-    margin-left: 12px;
-    float: left;
+    margin: 15px;
+    justify-content: space-between;
 }
 
 .create{
@@ -28,6 +25,8 @@
     font-weight: 900;
     color: black;
     font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    margin: 5px;
     
 }
 
@@ -35,29 +34,20 @@
     background-color: white;
 }
 
-.divCreate{
-    float: left;
-    margin: 19px;
-    margin-left: 52px;
-}
-
-
 
 .divSelectors{
-    float: left;
-    margin: 1%;
-    margin-left: 15.5%;
+    display: flex;
+    margin: 15px;
 }
 
 
-
-option{
-    font-family:'Open Sans', sans-serif ;
-    font-size: 15px;
+.select:hover{
     background-color: white;
 }
 
-select{
+.selectOne{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     height: 44px;
     font-family:'Open Sans', sans-serif ;
     font-size: 15px;
@@ -65,26 +55,72 @@ select{
     background: #ffcc06;
     align-items: center;
     text-align: unset;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
-select:hover{
+.selectOne:hover{
     background-color: white;
 }
 
-.selectOne{
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+
+.selectTwo{
+    height: 44px;
+    font-family:'Open Sans', sans-serif ;
+    font-size: 15px;
+    border:white;
+    background: #ffcc06;
+    align-items: center;
+    text-align: unset;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
-.selectTree{
+.selectTwo:hover{
+    background-color: white;
+}
+
+.selectThree{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: 44px;
+    font-family:'Open Sans', sans-serif ;
+    font-size: 15px;
+    border:white;
+    background: #ffcc06;
+    align-items: center;
+    text-align: unset;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
-.searchBar{
-    float: left;
-    margin: 1%;
-    margin-left: 38%;
+.selectThree:hover{
+    background-color: white;
 }
 
 
+.button{
+    border:none;
+    border: none;
+    background-color: #FFCC01;
+    height: 44px;
+    width: 86px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    pointer-events: all;
+    margin-left: 4px;
+    cursor: pointer;
+    margin: 5px
+
+}
+
+.button:hover{
+    background-color: white;
+}
+
+.options{
+    text-transform: capitalize;
+}
