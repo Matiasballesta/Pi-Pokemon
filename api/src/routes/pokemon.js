@@ -4,7 +4,6 @@ const router = Router();
 const {Pokemon, Type} = require('../db');
 
 
-
 const getApiInfo = async () => {
     try{
         const getData = await axios.get('https://pokeapi.co/api/v2/pokemon');
@@ -28,7 +27,6 @@ const getApiInfo = async () => {
                 types: poke.data.types.map(pokeType => pokeType.type.name)
                 }
             })
-             
         )
         return apiInfo;  
         
@@ -56,13 +54,12 @@ const getApiAndDb = async () => {
   const getDb = await getDbInfo();  
   const AllPokes = getApi.concat(getDb);
 
-        return AllPokes;
+  return AllPokes;
 
     }catch(e){
         console.log(e)
     } 
 }
-
 
 
 const getInfoById = async (id) => {
@@ -100,16 +97,6 @@ router.get('/', async (req,res)=> {
             res.status(200).send(getAll)
         }
     }catch(e){
-        res.status(404).send("Pokemon doesn't exist")
-        console.log(e)
-    }
-})
-
-router.get('/db', async (req,res)=>{
-    try{
-        const getdbPoke = await getDbInfo();
-        res.send(getdbPoke)
-    }catch(e){
         console.log(e)
     }
 })
@@ -117,7 +104,6 @@ router.get('/db', async (req,res)=>{
 
 router.get('/:id', async (req,res) => {
     const id = req.params.id;
-    //if(!id) return res.status(400).send('ID is required')
     try{
         const dbPoke = await Pokemon.findByPk(id, {
             include: {
@@ -156,7 +142,7 @@ router.post('/', async(req,res) => {
 
        let newPokemon = await Pokemon.create({
            name: name.toLowerCase(),
-           image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png",
+           image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/75.png",
            hp: hp,
            attack: attack,
            defense: defense,
@@ -172,7 +158,7 @@ router.post('/', async(req,res) => {
        })
        
        await newPokemon.addType(pokeType);
-       res.status(200).json({msg: "Pokemon created succefully", pokemon: newPokemon})
+       res.status(200).json({msg: "Pokemon created succefully"})
 
    }catch(e){
        console.log(e)
@@ -183,22 +169,7 @@ router.post('/', async(req,res) => {
 module.exports = router;
 
 
-//PROMESAS
-// function getInfobyName(name){
-//     return axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-//     .then(response => {
-//         var data = response.data
-//         return {
-//             name: data.name,
-//             hp: data.stats[0].base_stat,
-//             height: data.height,
-//             weight: data.weight,
-//             attack: data.stats[1].base_stat,
-//             defense: data.stats[2].base_stat,
-//             speed: data.stats[5].base_stat
-//         }
-//     })
-// }
+
 
 
 

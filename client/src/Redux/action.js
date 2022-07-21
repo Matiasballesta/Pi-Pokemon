@@ -2,7 +2,7 @@ const axios = require('axios');
 
 export function getPokemons(){
         return async (dispatch) => {
-            const json = await axios.get("/pokemons")
+            const json = await axios.get("pokemons")
             return dispatch({
                 type: "GET_ALL_POKEMONS",
                 payload: json.data
@@ -12,7 +12,7 @@ export function getPokemons(){
 
 export function getTypes(){   
         return async (dispatch) => {
-            const json = await axios.get("/types")
+            const json = await axios.get("types")
             return dispatch({
                 type: "GET_TYPES",
                 payload: json.data
